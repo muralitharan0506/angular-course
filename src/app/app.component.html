@@ -16,7 +16,7 @@
 
   <div class="courses">
 
-    <course-card 
+    <course-card #ref1
                  (courseChanged)="save($event)"
                  type="beginner"
                  [course]="courses[0]">
@@ -24,7 +24,7 @@
 
     </course-card>
 
-    <course-card 
+    <course-card #ref2
                  (courseChanged)="save($event)"
                  type="beginner"
                  [course]="courses[1]">

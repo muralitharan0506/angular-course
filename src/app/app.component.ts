@@ -41,11 +41,15 @@ export class AppComponent implements OnInit {
 
     }
 
-    @ViewChild(CourseCardComponent)
-    card:CourseCardComponent
+    @ViewChild('ref1')
+    card1:CourseCardComponent
     
+    @ViewChild('ref2')
+    card2:CourseCardComponent
     save(course: Course) {
-        console.log("card ",this.card);
+        console.log("card1 ",this.card1);
+        console.log("card2 ",this.card2);
+
         
         this.coursesService.saveCourse(course)
             .subscribe(
