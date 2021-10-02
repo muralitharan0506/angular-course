@@ -16,12 +16,19 @@
 
   <div class="courses">
 
-    <course-card *ngFor="let course of  courses  "
+    <course-card 
                  (courseChanged)="save($event)"
                  type="beginner"
-                 [course]="course">
+                 [course]="courses[0]">
 
-      <course-image [src]="course.iconUrl"></course-image>
+
+    </course-card>
+
+    <course-card 
+                 (courseChanged)="save($event)"
+                 type="beginner"
+                 [course]="courses[1]">
+
 
     </course-card>
 
