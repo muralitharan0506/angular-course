@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Inject, Injector, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, ElementRef, Inject, Injector, OnInit, ViewChild} from '@angular/core';
 import {Course} from './model/course';
 import {Observable} from 'rxjs';
 import {AppConfig, CONFIG_TOKEN} from './config';
@@ -41,14 +41,23 @@ export class AppComponent implements OnInit {
 
     }
 
+    @ViewChild('refdiv')
+    divele:ElementRef
+
     @ViewChild('ref1')
     card1:CourseCardComponent
     
     @ViewChild('ref2')
     card2:CourseCardComponent
+
+    @ViewChild('ref2',{read:ElementRef})
+    card2_div:CourseCardComponent
     save(course: Course) {
         console.log("card1 ",this.card1);
         console.log("card2 ",this.card2);
+        console.log("div1 ",this.divele);
+        console.log("card2_div ",this.card2_div);
+
 
         
         this.coursesService.saveCourse(course)
